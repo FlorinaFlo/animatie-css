@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Animatie</title>
+    <style>
+     body {
+         width: 100%;
+         margin: 0;
+         background-color: #050210;  
+     }
+
+     #cerc-rotativ {
+    position:relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    top: 100px;
+    border-radius: 50%;
+    background:linear-gradient( #fb5dad, #55fb9f, #b97aff);
+    animation-name: rotation;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 10px 0 70px  #fb5dad,
+    -14px -14px 70px #55fb9f,
+    15px 0 70px #b97aff
+}
+
+
+
+ @keyframes  rotation {
+ 100% {
+     transform: rotate(360deg);
+ }
+ }
+
+ #cerc-rotativ:hover {
+     animation-play-state: paused;
+ }
+ 
+
+ #cerc-2 {
+     position: absolute;
+     width: 300px;
+     height: 300px;
+     transform-origin: 50% 50% 0;
+     border-radius: 50%;
+     transform: translate(50px, 50px);
+     background-color: #050210;
+     
+ }
+
+  #interior {
+    transform-origin: 50% 50% 0;
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(128, 128, 128, 0.089);
+            border-radius: 50%;
+            animation: animinterior 1s ease-in-out infinite;
+  }
+
+ #interior:hover {
+     animation-play-state: paused;
+ }
+ @keyframes animinterior {
+    0% {
+        transform: scale(0%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+ }
+
+    </style>
+</head>
+<body>
+  <div id="cerc-rotativ">
+      <div id="cerc-2"> <span id="interior"></span>
+</div>
+</div>
+</body>
+</html>
